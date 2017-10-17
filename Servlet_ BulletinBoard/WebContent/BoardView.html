@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h3>게 시 판</h3>
+	<form method="post" action="myboard" enctype="multipart/form-data">
+		<table border="1">
+			<tr>
+				<th>제 목</th>
+				<td><input type="text" name="title" size="60" /></td>
+			</tr>
+			<tr>
+				<th>생성자</th>
+				<td><input type="text" name="name" /> 비밀번호<input
+					type="password" name="pw"></td>
+			</tr>
+			<tr>
+				<th>내 용</th>
+				<td><textarea name="contents" cols="50" rows="10"></textarea></td>
+			</tr>
+			<tr>
+				<th>첨부파일</th>
+				<td><input type="file" name="attach" /></td>
+			</tr>
+			<td colspan="2" align="right"><input type="submit"
+				value="글 올리기 "></td>
+
+		</table>
+	</form>
+
+</body>
+</html>
