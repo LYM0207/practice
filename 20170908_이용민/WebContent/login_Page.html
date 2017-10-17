@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입</title>
+</head>
+<script type="text/javascript">
+	// 중복 버튼 이벤트
+	function dupIdCheck() {
+		join.dupId.value = "dup";
+		join.submit();
+	}
+
+	//중복되었는지 안되었는지 확인.
+	function duplicate() {
+		var temp = location.href.split("?");
+		var dupState = temp[1];
+		var id = temp[2];
+		if (dupState == "duplication") {
+			alert("중복된 아이디 입니다.");
+			location.href = "http://localhost:8282/20170908_이용민/login_Page.html";
+		} else if (dupState == "notDuplication") {
+			alert(id + "는 사용 가능한 아이디 입니다.");
+			location.href = "http://localhost:8282/20170908_이용민/login_Page.html";
+		}
+	}
+</script>
+<body onload="duplicate()">
+
+	<form method="post" name="join" action="ProcessServlet01">
+		<table border="1" cellspacing="0">
+			<tr>
+				<th width="100">아이디</th>
+				<td width="300"><input type="text" name="id" /><input
+					type="button" value="중복검색" onclick="dupIdCheck()" /><input
+					type="hidden" name="dupId" /></td>
+			</tr>
+			<tr>
+				<th>비밀번호</th>
+				<td><input type="password" name="pw" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><input type="submit"
+					value="신청 완료" /> <input type="reset" value="취 소" /></td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>
